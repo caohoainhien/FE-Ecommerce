@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>Admin</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="header__logo dflex px-2 justify-content-start align-items-center">
+        <i class="header__collapse--btn fas fa-align-left"></i>
+        <img class="header__logo__img" src="/images/main-logo/pixlr-bg-result.png" alt="greatweb" />
+      </div>
+
+      <div class="header__profile px-1 mx-3 dflex justify-content-start align-items-center">
+        <div class="header__profile__imgWrapper mr-1">
+          <img class="header__profile__img" src="./assets/avatar.jpg" alt="" />
+        </div>
+        <p class="header__profile__name text-white text-bold-500 relative">Admin</p>
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- Header Profile -->
+    <div>
+      <span class="header__profile__name--nav">
+        <span class="header__profile__name--nav--pointer">
+          <i class="fas fa-sort-up"></i>
+        </span>
+        <ul class="header__profile__name--nav--list">
+          <li class="header__profile__name--nav--item">
+            <a class="header__profile__name--nav--link btn-logout" href="#">Logout</a>
+          </li>
+        </ul>
+      </span>
+    </div>
+    <!-- End Profile Header -->
+
+    <!-- Nav Main -->
+    <nav class="nav">
+      <div class="nav__wrapper">
+        <span class="nav__close">
+          <i class="fas fa-window-close"></i>
+        </span>
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__link nav__active btn-home" href="/admin">
+              <span class="nav__link--span--icon"
+                ><i class="fas fa-home nav__link--icon"> </i
+              ></span>
+              <span class="nav__link--span--navname"> Trang chủ </span>
+            </a>
+          </li>
+          <li class="nav__item nav__showOrders">
+            <a class="nav__link" href="#">
+              <span class="nav__link--span--icon"
+                ><i class="fas fa-shopping-bag nav__link--icon"> </i
+              ></span>
+              <span class="nav__link--span--navname"> Đơn hàng </span>
+            </a>
+          </li>
+
+          <ul class="sub__nav--list nav__orders--items">
+            <li class="sub__nav--item">
+              <a class="sub__nav--link btn-orders" href="/admin/orders.html"> Đơn hàng</a>
+            </li>
+          </ul>
+          <li class="nav__item nav__showProducts">
+            <a class="nav__link" href="#">
+              <span class="nav__link--span--icon"
+                ><i class="fas fa-tags nav__link--icon"> </i
+              ></span>
+              <span class="nav__link--span--navname"> Các sản phẩm </span>
+            </a>
+          </li>
+          <ul class="sub__nav--list nav__products--items">
+            <li class="sub__nav--item">
+              <a class="sub__nav--link btn-products" href="/admin/products.html"
+                >Tất cả các sản phẩm</a
+              >
+            </li>
+
+            <li class="sub__nav--item">
+              <a class="sub__nav--link btn-collections" href="/admin/collections.html"
+                >Loại sản phẩm</a
+              >
+            </li>
+          </ul>
+          <li class="nav__item">
+            <a class="nav__link btn-customers" href="/admin/customers.html">
+              <span class="nav__link--span--icon"
+                ><i class="fas fa-user nav__link--icon"> </i
+              ></span>
+              <span class="nav__link--span--navname"> Khách hàng </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- End Nav Main -->
+
+    <main class="main">
+      <!-- Side Nav Dummy-->
+      <div class="main__sideNav"></div>
+      <!-- End Side Nav -->
+      <!-- Main Content -->
+      <div class="main__content">
+        <!-- ==================-->
+        <!-- Orders Page -->
+        <div class="orders">
+          <h2 class="my-3">Đơn hàng</h2>
+
+          <div class="table card my-3">
+            <div class="table--filter mb-2">
+              <span class="table--filter--collapseBtn orders__table--filter--collapseBtn">
+                <i class="fas fa-ellipsis-h"></i>
+              </span>
+              <div class="table--filter--listWrapper orders__table--filter--listWrapper">
+                <ul class="table--filter--list list-unstyled dflex justify-content-start">
+                  <li>
+                    <p class="table--filter--link table--filter--link--active btn-status-all">
+                      Tất cả
+                    </p>
+                  </li>
+                  <li>
+                    <p class="table--filter--link btn-status-new">Đơn hàng đang giao</p>
+                  </li>
+                  <li>
+                    <p class="table--filter--link btn-status-succ">Đơn hàng đã giao</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="table--search my-3">
+              <div class="table--search--wrapper">
+                <button class="table--search--select py-1 px-2" name="" id="btn-search-orders">
+                  Tìm kiếm
+                </button>
+              </div>
+              <div class="relative">
+                <i class="table--search--input--icon fas fa-search absolute"></i>
+                <input
+                  class="table--search--input py-1 pl-4 pr-2 txt-search-orders"
+                  type="text"
+                  placeholder="Tìm kiếm theo email khách hàng"
+                />
+              </div>
+            </div>
+
+            <div class="table--heading mt-2">
+              <p class="table--heading--col1">Id</p>
+              <p class="table--heading--col2">
+                Ngày mua
+                <i
+                  class="fas fa-arrows-alt-v btn-date"
+                  style="cursor: pointer; padding-left: 10px"
+                ></i>
+              </p>
+              <p class="table--heading--col3">Tên khách hàng</p>
+              <p class="table--heading--col4">Email</p>
+              <p class="table--heading--col5">Tình trạng</p>
+              <p class="table--heading--col7">
+                Tổng tiền
+                <i
+                  class="fas fa-arrows-alt-v btn-price"
+                  style="cursor: pointer; padding-left: 10px"
+                ></i>
+              </p>
+            </div>
+
+            <div id="all-bill"></div>
+
+            <!-- Order 1 -->
+
+            <!-- Paginate -->
+            <div class="paginate dflex justify-content-between align-items-center mt-2">
+              <i class="paginate__icon fas fa-angle-left"></i>
+              <i class="paginate__icon fas fa-angle-double-left"></i>
+              <p class="paginate__text">Page 1 of 1</p>
+              <i class="paginate__icon fas fa-angle-double-right"></i>
+              <i class="paginate__icon fas fa-angle-right"></i>
+            </div>
+            <!-- End Paginate -->
+          </div>
+        </div>
+        <!-- End Orders Page -->
+        <!-- ==================-->
+
+        <!-- ==================-->
+        <!-- Single Order Page -->
+        <div class="singleOrder">
+          <div class="singleOrder__header">
+            <div class="breadcramb mt-3 back-order">
+              <i class="fas fa-angle-left mr-1"></i>Đơn hàng
+            </div>
+            <div class="singleOrder__title mt-1 dflex justify-content-start align-items-center">
+              <h1 class="mr-2 id-order"></h1>
+              <p class="date-order"></p>
+            </div>
+          </div>
+          <div class="singleOrder__cardWrapper mt-2">
+            <div class="singleOrder__main">
+              <div class="singleOrder__main--card card py-2 px-3">
+                <div
+                  class="singleOrder__main--card--heading dflex justify-content-start align-items-center mb-2"
+                >
+                  <div class="singleOrder__main--card--icon--fulfilled">
+                    <i class="fas fa-check text-white"></i>
+                  </div>
+
+                  <p class="ml-1"><strong>Sản phẩm</strong></p>
+                </div>
+
+                <div class="singleOrder__main--card--content">
+                  <ul
+                    class="singleOrder__main--card--itemList list-unstyled singleOrder-list-product"
+                  ></ul>
+                </div>
+              </div>
+
+              <div class="singleOrder__main--card py-2 px-3 card mt-2">
+                <div
+                  class="singleOrder__main--card--heading dflex justify-content-start align-items-center mb-2"
+                >
+                  <div class="singleOrder__main--card--icon--fulfilled">
+                    <i class="fas fa-check text-white"></i>
+                  </div>
+
+                  <h4 class="ml-1">Trả</h4>
+                </div>
+
+                <div>
+                  <div class="dflex justify-content-between mb-2">
+                    <p>Tổng tiền</p>
+                    <p class="singleOrder-total"></p>
+                  </div>
+                  <div class="dflex justify-content-between mb-2">
+                    <p>Phí vận chuyển</p>
+                    <p class="priceShip"></p>
+                  </div>
+                  <hr />
+                  <div class="dflex justify-content-between my-2">
+                    <p>Do khách hàng trả</p>
+                    <p class="priceTotal"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="singleOrder__sidebar">
+              <div class="singleOrder__sidebar--customer bg-white card py-2 px-3">
+                <div class="dflex justify-content-between align-items-center">
+                  <h4>Khách hàng</h4>
+                </div>
+
+                <div class="mb-2">
+                  <a class="customer-name" href="#"></a>
+                </div>
+
+                <hr />
+
+                <p class="my-2">
+                  <strong>THÔNG TIN LIÊN HỆ</strong>
+                </p>
+                <a class="customer-email" href="#"></a>
+                <p class="customer-phone" class="my-2"></p>
+
+                <hr />
+                <p class="my-2">
+                  <strong>ĐỊA CHỈ GIAO HÀNG</strong>
+                </p>
+                <p class="my-2 customer-address"></p>
+
+                <hr />
+                <p class="my-2">
+                  <strong>ĐỊA CHỈ THANH TOÁN</strong>
+                </p>
+                <p class="customer-address"></p>
+              </div>
+
+              <div class="singleOrder__main--card py-2 px-3 card mt-2">
+                <div
+                  class="singleOrder__main--card--heading dflex justify-content-start align-items-center mb-2"
+                >
+                  <div class="singleOrder__main--card--icon--fulfilled">
+                    <i class="fas fa-check text-white"></i>
+                  </div>
+
+                  <h4 class="ml-1">Tình trạng đơn hàng</h4>
+                </div>
+
+                <div>
+                  <div class="dflex justify-content-between mb-2">
+                    <p class="status-bill"></p>
+                  </div>
+                  <hr />
+                  <div class="dflex justify-content-between my-2">
+                    <button class="btn btn-danger btn-update-status-bill">Đã giao hàng</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Single Order Page -->
+        <!-- ==================-->
+      </div>
+      <!-- End Main Content -->
+    </main>
+    <script src="js/script.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

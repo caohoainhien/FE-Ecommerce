@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>Admin</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="header__logo dflex px-2 justify-content-start align-items-center">
+        <i class="header__collapse--btn fas fa-align-left"></i>
+        <img class="header__logo__img" src="/images/main-logo/pixlr-bg-result.png" alt="greatweb" />
+      </div>
+
+      <div class="header__profile px-1 mx-3 dflex justify-content-start align-items-center">
+        <div class="header__profile__imgWrapper mr-1">
+          <img class="header__profile__img" src="./assets/avatar.jpg" alt="" />
+        </div>
+        <p class="header__profile__name text-white text-bold-500 relative">Admin</p>
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- Header Profile -->
+    <div>
+      <span class="header__profile__name--nav">
+        <span class="header__profile__name--nav--pointer">
+          <i class="fas fa-sort-up"></i>
+        </span>
+        <ul class="header__profile__name--nav--list">
+          <li class="header__profile__name--nav--item">
+            <a class="header__profile__name--nav--link btn-logout" href="#">Logout</a>
+          </li>
+        </ul>
+      </span>
+    </div>
+    <!-- End Profile Header -->
+
+    <!-- Nav Main -->
+    <nav class="nav">
+      <div class="nav__wrapper">
+        <span class="nav__close">
+          <i class="fas fa-window-close"></i>
+        </span>
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__link nav__active btn-home" href="/admin">
+              <span class="nav__link--span--icon"
+                ><i class="fas fa-home nav__link--icon"> </i
+              ></span>
+              <span class="nav__link--span--navname"> Trang chủ </span>
+            </a>
+          </li>
+          <li class="nav__item nav__showOrders">
+            <a class="nav__link" href="#">
+              <span class="nav__link--span--icon"
+                ><i class="fas fa-shopping-bag nav__link--icon"> </i
+              ></span>
+              <span class="nav__link--span--navname"> Đơn hàng </span>
+            </a>
+          </li>
+
+          <ul class="sub__nav--list nav__orders--items">
+            <li class="sub__nav--item">
+              <a class="sub__nav--link btn-orders" href="/admin/orders.html"> Đơn hàng</a>
+            </li>
+          </ul>
+          <li class="nav__item nav__showProducts">
+            <a class="nav__link" href="#">
+              <span class="nav__link--span--icon"
+                ><i class="fas fa-tags nav__link--icon"> </i
+              ></span>
+              <span class="nav__link--span--navname"> Các sản phẩm </span>
+            </a>
+          </li>
+          <ul class="sub__nav--list nav__products--items">
+            <li class="sub__nav--item">
+              <a class="sub__nav--link btn-products" href="/admin/products.html"
+                >Tất cả các sản phẩm</a
+              >
+            </li>
+
+            <li class="sub__nav--item">
+              <a class="sub__nav--link btn-collections" href="/admin/collections.html"
+                >Loại sản phẩm</a
+              >
+            </li>
+          </ul>
+          <li class="nav__item">
+            <a class="nav__link btn-customers" href="/admin/customers.html">
+              <span class="nav__link--span--icon"
+                ><i class="fas fa-user nav__link--icon"> </i
+              ></span>
+              <span class="nav__link--span--navname"> Khách hàng </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- End Nav Main -->
+
+    <main class="main">
+      <!-- Side Nav Dummy-->
+      <div class="main__sideNav"></div>
+      <!-- End Side Nav -->
+      <!-- Main Content -->
+      <div class="main__content">
+        <!-- ==================-->
+        <!-- Products -->
+        <div class="products">
+          <div id="products__list" class="products__list">
+            <div class="products__titlebar dflex justify-content-between align-items-center mt-2">
+              <div class="products__titlebar--item">
+                <h1 class="my-1">Các sản phẩm</h1>
+              </div>
+              <div class="products__titlebar--item">
+                <button class="btn btn-secondary btn-show-add-product ml-1">Thêm sản phẩm</button>
+              </div>
+            </div>
+
+            <div class="table card my-3">
+              <div class="table--filter mb-2">
+                <span class="table--filter--collapseBtn orders__table--filter--collapseBtn">
+                  <i class="fas fa-ellipsis-h"></i>
+                </span>
+                <div class="table--filter--listWrapper orders__table--filter--listWrapper">
+                  <ul class="table--filter--list list-unstyled dflex justify-content-start">
+                    <li>
+                      <p class="table--filter--link table--filter--link--active">Tất cả sản phẩm</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="table--search my-3">
+                <div class="table--search--wrapper">
+                  <button class="table--search--select py-1 px-2" id="btn-search-product">
+                    Tìm kiếm
+                  </button>
+                </div>
+                <div class="relative">
+                  <i class="table--search--input--icon fas fa-search absolute"></i>
+                  <input
+                    class="table--search--input py-1 pl-4 pr-2"
+                    type="text"
+                    id="text-search-product"
+                    placeholder="Tìm kiếm"
+                  />
+                </div>
+              </div>
+
+              <div class="table--heading mt-2 products__list__heading">
+                <!-- <p class="table--heading--col1">&#32;</p> -->
+                <p class="table--heading--col1">Hình ảnh</p>
+                <p class="table--heading--col2">Sản phẩm</p>
+
+                <p class="table--heading--col3">Số lượng còn</p>
+                <!-- <p class="table--heading--col5">&#32;</p> -->
+                <p class="table--heading--col5">Hoạt động</p>
+              </div>
+
+              <div class="all-products">
+                <!-- Paginate -->
+                <div class="paginate dflex justify-content-between align-items-center mt-2">
+                  <i class="paginate__icon fas fa-angle-left"></i>
+                  <i class="paginate__icon fas fa-angle-double-left"></i>
+                  <p class="paginate__text">Page 1 of 1</p>
+                  <i class="paginate__icon fas fa-angle-double-right"></i>
+                  <i class="paginate__icon fas fa-angle-right"></i>
+                </div>
+                <!-- End Paginate -->
+              </div>
+            </div>
+          </div>
+
+          <div id="products__create" class="products__create">
+            <div
+              class="products__create__titlebar dflex justify-content-between align-items-center"
+            >
+              <div class="products__create__titlebar--item">
+                <div class="breadcramb mt-3">
+                  <i class="fas fa-angle-left mr-1"></i>Các sản phẩm
+                </div>
+                <h1 class="my-1">Thêm sản phẩm</h1>
+              </div>
+              <div class="products__create__titlebar--item">
+                <button class="btn btn-light btn-refresh-add-product">Làm mới</button>
+                <button class="btn btn-secondary ml-1 btn-admin-add-product">Lưu</button>
+              </div>
+            </div>
+
+            <div class="products__create__cardWrapper mt-2">
+              <div class="products__create__main">
+                <div class="products__create__main--addInfo card py-2 px-2 bg-white">
+                  <p class="mb-1">Tên sản phẩm</p>
+                  <input type="text" placeholder="Tên sản phẩm" class="input txt-product-name" />
+
+                  <p class="my-1">Mô tả (không bắt buộc)</p>
+                  <textarea cols="30" rows="10" class="textarea txt-product-desc"></textarea>
+                </div>
+
+                <div class="products__create__main--media card py-2 px-2 bg-white mt-2">
+                  <h3>Hình ảnh</h3>
+                  <div class="upload__box">
+                    <div class="upload__btn-box products__create__main--media--form mt-2">
+                      <label class="products__create__main--media--form--label" for="myfile"
+                        >Thêm hình ảnh</label
+                      >
+                      <input
+                        class="products__create__main--media--form--input upload__inputfile"
+                        type="file"
+                        id="myfile"
+                        name="myfile"
+                        accept="image/*"
+                      />
+                    </div>
+                    <div class="upload__img-wrap mt-2"></div>
+                  </div>
+                </div>
+
+                <div class="products__create__main--pricing card py-2 px-2 bg-white mt-2">
+                  <h3 class="mb-2">Định giá</h3>
+
+                  <div class="products__create__main--pricing--col">
+                    <div>
+                      <label for="price">Giá</label>
+                      <input
+                        id="price"
+                        type="text"
+                        class="input mt-1 txt-product-price"
+                        placeholder=""
+                      />
+                    </div>
+                    <div>
+                      <label for="price">Số lượng</label>
+                      <input
+                        id="amount"
+                        type="text"
+                        class="input mt-1 txt-product-amount"
+                        placeholder=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--  Collections -->
+              <div class="card py-2 px-2 bg-white">
+                <h3>Loại sản phẩm</h3>
+
+                <div class="inputBrowse mt-3">
+                  <i class="inputBrowse__icon fas fa-search"></i>
+                  <input type="text" placeholder="Tìm kiếm" class="inputBrowse__input" />
+                </div>
+
+                <div class="mt-2 all-category-admin"></div>
+              </div>
+            </div>
+            <!-- Footer Bar -->
+            <div class="dflex justify-content-between align-items-center my-3">
+              <button class="btn btn-danger btn-refresh-add-product">Huỷ bỏ</button>
+              <button class="btn btn-secondary btn-admin-add-product">Lưu</button>
+            </div>
+          </div>
+
+          <div id="products__edit" class="products__create">
+            <div
+              class="products__create__titlebar dflex justify-content-between align-items-center"
+            >
+              <div class="products__create__titlebar--item">
+                <div class="breadcramb mt-3">
+                  <i class="fas fa-angle-left mr-1"></i>Các sản phẩm
+                </div>
+                <h1 class="my-1">Sửa sản phẩm</h1>
+              </div>
+              <div class="products__create__titlebar--item">
+                <button class="btn btn-light btn-refresh-add-product">Làm mới</button>
+              </div>
+            </div>
+            <div class="products__create__cardWrapper mt-2">
+              <div class="products__create__main">
+                <div class="products__create__main--addInfo card py-2 px-2 bg-white">
+                  <p class="mb-1">Tên sản phẩm</p>
+                  <input
+                    type="text"
+                    placeholder="Tên sản phẩm"
+                    class="input txt-edit-product-name"
+                  />
+
+                  <p class="my-1">Mô tả (không bắt buộc)</p>
+                  <textarea cols="30" rows="10" class="textarea txt-edit-product-desc"></textarea>
+                </div>
+
+                <div class="products__create__main--media card py-2 px-2 bg-white mt-2">
+                  <h3>Hình ảnh</h3>
+                  <div class="upload__box">
+                    <div class="upload__btn-box products__create__main--media--form mt-2">
+                      <label class="products__create__main--media--form--label" for="myfile"
+                        >Thêm hình ảnh</label
+                      >
+                      <input
+                        class="products__create__main--media--form--input upload__inputfile"
+                        type="file"
+                        id="myfile"
+                        name="myfile"
+                        accept="image/*"
+                      />
+                    </div>
+                    <div class="upload__img-wrap mt-2"></div>
+                  </div>
+                  <div class="mt-2">
+                    <p>Ảnh ban đầu</p>
+                    <div class="list-img-edit upload__img-wrap mt-1"></div>
+                  </div>
+                </div>
+
+                <div class="products__create__main--pricing card py-2 px-2 bg-white mt-2">
+                  <h3 class="mb-2">Định giá</h3>
+
+                  <div class="products__create__main--pricing--col">
+                    <div>
+                      <label for="price">Giá</label>
+                      <input
+                        id="price"
+                        type="text"
+                        class="input mt-1 txt-edit-product-price"
+                        placeholder=""
+                      />
+                    </div>
+                    <div>
+                      <label for="price">Số lượng</label>
+                      <input
+                        id="amount"
+                        type="text"
+                        class="input mt-1 txt-edit-product-amount"
+                        placeholder=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--  Collections -->
+              <div class="card py-2 px-2 bg-white">
+                <h3>Loại sản phẩm</h3>
+
+                <div class="inputBrowse mt-3">
+                  <i class="inputBrowse__icon fas fa-search"></i>
+                  <input type="text" placeholder="Tìm kiếm" class="inputBrowse__input" />
+                </div>
+
+                <div class="mt-2 all-category-admin-02"></div>
+              </div>
+            </div>
+            <!-- Footer Bar -->
+            <div class="dflex justify-content-between align-items-center my-3">
+              <button class="btn btn-danger btn-refresh-add-product">Huỷ bỏ</button>
+              <button class="btn btn-secondary btn-admin-update-product">Lưu</button>
+            </div>
+          </div>
+        </div>
+        <!-- End Products -->
+        <!-- ==================-->
+      </div>
+      <!-- End Main Content -->
+    </main>
+    <script src="js/script.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <!--[if IE]>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Đồ gỗ Hoài Nhiên</title>
+    <!-- Standard Favicon -->
+    <link href="favicon.ico" rel="shortcut icon" />
+    <!-- Base Google Font for Web-app -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" />
+    <!-- Google Fonts for Banners only -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,800" rel="stylesheet" />
+    <!-- Bootstrap 4 -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- Font Awesome 5 -->
+    <link rel="stylesheet" href="css/fontawesome.min.css" />
+    <!-- Ion-Icons 4 -->
+    <link rel="stylesheet" href="css/ionicons.min.css" />
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="css/animate.min.css" />
+    <!-- Owl-Carousel -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <!-- Jquery-Ui-Range-Slider -->
+    <link rel="stylesheet" href="css/jquery-ui-range-slider.min.css" />
+    <!-- Utility -->
+    <link rel="stylesheet" href="css/utility.css" />
+    <!-- Main -->
+    <link rel="stylesheet" href="css/bundle.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body>
+    <!-- app -->
+    <div id="app">
+      <!-- Header -->
+      <header>
+        <!-- Top-Header -->
+        <div class="full-layer-outer-header">
+          <div class="container clearfix">
+            <nav>
+              <ul class="secondary-nav g-nav">
+                <li>
+                  <a
+                    ><i class="fas fa-user"></i>
+                    <i class="fas fa-chevron-down u-s-m-l-9"></i>
+                  </a>
+                  <ul class="g-dropdown" style="width: 200px">
+                    <li class="user-check">
+                      <a href="user.html">
+                        <i class="fas fa-user u-s-m-r-9"></i>
+                        Thông tin cá nhân</a
+                      >
+                    </li>
+                    <li class="user-check">
+                      <a href="order.html">
+                        <i class="fas fa-sort-numeric-down u-s-m-r-9"></i>
+                        Đơn hàng đã đặt</a
+                      >
+                    </li>
+                    <li>
+                      <a href="cart.html">
+                        <i class="fas fa-cog u-s-m-r-9"></i>
+                        Giỏ hàng</a
+                      >
+                    </li>
+
+                    <li>
+                      <a href="checkout.html">
+                        <i class="far fa-check-circle u-s-m-r-9"></i>
+                        Thủ tục thanh toán</a
+                      >
+                    </li>
+                    <li>
+                      <a class="check-login" href="account.html">
+                        <i class="fas fa-sign-in-alt u-s-m-r-9"></i>
+                        Đăng nhập / Đăng ký</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <!-- Top-Header /- -->
+        <!-- Mid-Header -->
+        <div class="full-layer-mid-header">
+          <div class="container">
+            <div class="row clearfix align-items-center">
+              <div class="col-lg-3 col-md-9 col-sm-6">
+                <div class="brand-logo text-lg-center">
+                  <a href="/">
+                    <img
+                      src="images/main-logo/pixlr-bg-result.png"
+                      alt="Groover Brand Logo"
+                      class="app-brand-logo"
+                    />
+                  </a>
+                </div>
+              </div>
+              <div class="col-lg-6 u-d-none-lg">
+                <div class="form-searchbox">
+                  <label class="sr-only" for="search-landscape">Tìm kiếm</label>
+                  <input
+                    id="search-landscape"
+                    type="text"
+                    class="text-field"
+                    placeholder="Tìm kiếm"
+                  />
+                  <div class="select-box-position">
+                    <div class="select-box-wrapper select-hide">
+                      <label class="sr-only" for="select-category">Chọn danh mục để tìm kiếm</label>
+                      <select class="select-box" id="select-category"></select>
+                    </div>
+                  </div>
+                  <button
+                    id="btn-search"
+                    type="submit"
+                    class="button button-primary fas fa-search submit-search"
+                  ></button>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-6">
+                <nav>
+                  <ul class="mid-nav g-nav">
+                    <li class="u-d-none-lg">
+                      <a href="/">
+                        <i class="ion ion-md-home"></i>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a id="mini-cart-trigger">
+                        <i class="ion ion-md-basket"></i>
+                        <span class="item-counter">4</span>
+                        <span class="item-price"> </span>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Mid-Header /- -->
+        <!-- Responsive-Buttons -->
+        <div class="fixed-responsive-container">
+          <div class="fixed-responsive-wrapper">
+            <button type="button" class="button fas fa-search" id="responsive-search"></button>
+          </div>
+        </div>
+        <!-- Responsive-Buttons /- -->
+        <!-- Mini Cart -->
+        <div class="mini-cart-wrapper">
+          <div class="mini-cart">
+            <div class="mini-cart-header">
+              Giỏ hàng của bạn
+              <button type="button" class="button ion ion-md-close" id="mini-cart-close"></button>
+            </div>
+            <ul class="mini-cart-list"></ul>
+            <div class="mini-shop-total clearfix">
+              <span class="mini-total-heading float-left">Tổng:</span>
+              <span class="mini-total-price float-right"> </span>
+            </div>
+            <div class="mini-action-anchors">
+              <a href="cart.html" class="cart-anchor">Xem giỏ hàng</a>
+              <a href="checkout.html" class="Checkout-anchor">Thủ tục thanh toán</a>
+            </div>
+          </div>
+        </div>
+        <!-- Mini Cart /- -->
+        <!-- Bottom-Header -->
+        <div class="full-layer-bottom-header">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-lg-3">
+                <div class="v-menu v-close">
+                  <span class="v-title">
+                    <i class="ion ion-md-menu"></i>
+                    Các loại sản phẩm
+                    <i class="fas fa-angle-down"></i>
+                  </span>
+                  <nav>
+                    <div class="v-wrapper">
+                      <ul class="v-list animated fadeIn list-category"></ul>
+                    </div>
+                  </nav>
+                </div>
+              </div>
+              <div class="col-lg-9">
+                <ul class="bottom-nav g-nav u-d-none-lg">
+                  <li>
+                    <a href="custom-deal-page.html"
+                      >Sản Phẩm Mới
+                      <span class="superscript-label-new">Mới</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="custom-deal-page.html"
+                      >Sản phẩm bán chạy
+                      <span class="superscript-label-hot">HOT</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="shop.html">Cửa hàng</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Bottom-Header /- -->
+      </header>
+      <!-- Header /- -->
+      <!-- Page Introduction Wrapper -->
+      <div class="page-style-a">
+        <div class="container">
+          <div class="page-intro">
+            <h2>Thông tin cá nhân</h2>
+            <ul class="bread-crumb">
+              <li class="has-separator">
+                <i class="ion ion-md-home"></i>
+                <a href="/">Trang chủ</a>
+              </li>
+              <li class="is-marked">
+                <a href="order.html">Đơn hàng đã đặt</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Page Introduction Wrapper /- -->
+      <!-- Checkout-Page -->
+      <div class="page-Checkout u-s-p-t-80">
+        <div class="container">
+          <table class="table table-striped all-bill-user">
+            <thead>
+              <tr>
+                <th scope="col">#ID</th>
+                <th scope="col">Ngày mua</th>
+                <th scope="col">Email</th>
+                <th scope="col">Tình trạng</th>
+                <th scope="col">Tổng tiền</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody class="user-all-bill"></tbody>
+          </table>
+
+          <div class="bill-by-id">
+            <h1 class="id-order"></h1>
+            <h4 class="mt-3">Thông tin:</h4>
+            <div class="row">
+              <div class="col-md-6">
+                <span>Họ tên:</span>
+                <span class="bill-name"></span>
+              </div>
+              <div class="col-md-6">
+                <span>Số điện thoại:</span>
+                <span class="bill-sdt"></span>
+              </div>
+              <div class="col-md-6 mt-1">
+                <span>Địa chỉ:</span>
+                <span class="bill-address"></span>
+              </div>
+              <div class="col-md-6 mt-1">
+                <span>Email:</span>
+                <span class="bill-email"></span>
+              </div>
+            </div>
+
+            <h4 class="mt-3">Tình trạng đơn hàng:</h4>
+            <div class="row">
+              <div class="col-md-6">
+                <span>Tình trạng:</span>
+                <span class="bill-status"></span>
+              </div>
+              <div class="col-md-6">
+                <span>Phí vận chuyển:</span>
+                <span class="bill-priceShip"></span>
+              </div>
+              <div class="col-md-6 mt-1">
+                <span>Tổng tiền:</span>
+                <span class="singleOrder-total"></span>
+              </div>
+              <div class="col-md-6 mt-1">
+                <span>Tổng tiền phải trả:</span>
+                <span class="priceTotal"></span>
+              </div>
+            </div>
+
+            <h4 class="mt-3">Thông tin mặt hàng:</h4>
+            <ul
+              class="singleOrder__main--card--itemList list-unstyled singleOrder-list-product"
+            ></ul>
+          </div>
+        </div>
+      </div>
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="container">
+          <!-- Outer-Footer -->
+
+          <!-- Outer-Footer /- -->
+          <!-- Mid-Footer -->
+          <div class="mid-footer-wrapper u-s-p-b-80">
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="footer-list">
+                  <h6>CÔNG TY</h6>
+                  <ul>
+                    <li>
+                      <a href="/">Trang chủ</a>
+                    </li>
+                    <li>
+                      <a href="contact.html">Contact</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="footer-list">
+                  <h6>THÔNG TIN</h6>
+                  <ul>
+                    <li>
+                      <a href="shop.html">Cửa hàng</a>
+                    </li>
+                    <li>
+                      <a href="cart.html">Giỏ hàng</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="footer-list">
+                  <h6>Địa chỉ</h6>
+                  <ul>
+                    <li>
+                      <i class="fas fa-location-arrow u-s-m-r-9"></i>
+                      <span
+                        >451 Đ. Lê Văn Việt, Tăng Nhơn Phú A, thành phố Thủ Đức, Thành phố Hồ Chí
+                        Minh, Việt Nam</span
+                      >
+                    </li>
+                    <li>
+                      <a href="tel:+923086561801">
+                        <i class="fas fa-phone u-s-m-r-9"></i>
+                        <span>01684478676</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="mailto:contact@domain.com">
+                        <i class="fas fa-envelope u-s-m-r-9"></i>
+                        <span> dogohoainhien@gmail.com</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Mid-Footer /- -->
+          <!-- Bottom-Footer -->
+        </div>
+        <!-- Bottom-Footer /- -->
+      </footer>
+      <!-- Footer /- -->
+      <!-- Dummy Selectbox -->
+      <div class="select-dummy-wrapper">
+        <select id="compute-select">
+          <option id="compute-option">All</option>
+        </select>
+      </div>
+      <!-- Dummy Selectbox /- -->
+      <!-- Responsive-Search -->
+      <div class="responsive-search-wrapper">
+        <button
+          type="button"
+          class="button ion ion-md-close"
+          id="responsive-search-close-button"
+        ></button>
+        <div class="responsive-search-container">
+          <div class="container">
+            <p>Bắt đầu nhập và nhấn Enter để tìm kiếm</p>
+            <form class="responsive-search-form">
+              <label class="sr-only" for="search-text">Tìm kiếm</label>
+              <input
+                id="search-text"
+                type="text"
+                class="responsive-search-field"
+                placeholder="PLEASE SEARCH"
+              />
+              <i class="fas fa-search"></i>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Responsive-Search /- -->
+    </div>
+    <!-- app /- -->
+    <!-- NoScript -->
+
+    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    <script>
+      window.ga = function () {
+        ga.q.push(arguments);
+      };
+      ga.q = [];
+      ga.l = +new Date();
+      ga("create", "UA-XXXXX-Y", "auto");
+      ga("send", "pageview");
+    </script>
+    <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+    <!-- Modernizr-JS -->
+    <script type="text/javascript" src="js/vendor/modernizr-custom.min.js"></script>
+    <!-- NProgress -->
+    <script type="text/javascript" src="js/nprogress.min.js"></script>
+    <!-- jQuery -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- Popper -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- ScrollUp -->
+    <script type="text/javascript" src="js/jquery.scrollUp.min.js"></script>
+    <!-- Elevate Zoom -->
+    <script type="text/javascript" src="js/jquery.elevatezoom.min.js"></script>
+    <!-- jquery-ui-range-slider -->
+    <script type="text/javascript" src="js/jquery-ui.range-slider.min.js"></script>
+    <!-- jQuery Slim-Scroll -->
+    <script type="text/javascript" src="js/jquery.slimscroll.min.js"></script>
+    <!-- jQuery Resize-Select -->
+    <script type="text/javascript" src="js/jquery.resize-select.min.js"></script>
+    <!-- jQuery Custom Mega Menu -->
+    <script type="text/javascript" src="js/jquery.custom-megamenu.min.js"></script>
+    <!-- jQuery Countdown -->
+    <script type="text/javascript" src="js/jquery.custom-countdown.min.js"></script>
+    <!-- Owl Carousel -->
+    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+    <!-- Main -->
+    <script type="text/javascript" src="js/app.js"></script>
+  </body>
+</html>

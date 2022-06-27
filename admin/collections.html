@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>Admin</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="header__logo dflex px-2 justify-content-start align-items-center">
+        <i class="header__collapse--btn fas fa-align-left"></i>
+        <img class="header__logo__img" src="/images/main-logo/pixlr-bg-result.png" alt="greatweb" />
+      </div>
+
+      <div class="header__profile px-1 mx-3 dflex justify-content-start align-items-center">
+        <div class="header__profile__imgWrapper mr-1">
+          <img class="header__profile__img" src="./assets/avatar.jpg" alt="" />
+        </div>
+        <p class="header__profile__name text-white text-bold-500 relative">Admin</p>
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- Header Profile -->
+    <div>
+      <span class="header__profile__name--nav">
+        <span class="header__profile__name--nav--pointer">
+          <i class="fas fa-sort-up"></i>
+        </span>
+        <ul class="header__profile__name--nav--list">
+          <li class="header__profile__name--nav--item">
+            <a class="header__profile__name--nav--link btn-logout" href="#">Logout</a>
+          </li>
+        </ul>
+      </span>
+    </div>
+    <!-- End Profile Header -->
+
+    <!-- Nav Main -->
+    <nav class="nav">
+      <div class="nav__wrapper">
+        <span class="nav__close">
+          <i class="fas fa-window-close"></i>
+        </span>
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__link nav__active btn-home" href="/admin">
+              <span class="nav__link--span--icon"
+                ><i class="fas fa-home nav__link--icon"> </i
+              ></span>
+              <span class="nav__link--span--navname"> Trang chủ </span>
+            </a>
+          </li>
+          <li class="nav__item nav__showOrders">
+            <a class="nav__link" href="#">
+              <span class="nav__link--span--icon"
+                ><i class="fas fa-shopping-bag nav__link--icon"> </i
+              ></span>
+              <span class="nav__link--span--navname"> Đơn hàng </span>
+            </a>
+          </li>
+
+          <ul class="sub__nav--list nav__orders--items">
+            <li class="sub__nav--item">
+              <a class="sub__nav--link btn-orders" href="/admin/orders.html"> Đơn hàng</a>
+            </li>
+          </ul>
+          <li class="nav__item nav__showProducts">
+            <a class="nav__link" href="#">
+              <span class="nav__link--span--icon"
+                ><i class="fas fa-tags nav__link--icon"> </i
+              ></span>
+              <span class="nav__link--span--navname"> Các sản phẩm </span>
+            </a>
+          </li>
+          <ul class="sub__nav--list nav__products--items">
+            <li class="sub__nav--item">
+              <a class="sub__nav--link btn-products" href="/admin/products.html"
+                >Tất cả các sản phẩm</a
+              >
+            </li>
+
+            <li class="sub__nav--item">
+              <a class="sub__nav--link btn-collections" href="/admin/collections.html"
+                >Loại sản phẩm</a
+              >
+            </li>
+          </ul>
+          <li class="nav__item">
+            <a class="nav__link btn-customers" href="/admin/customers.html">
+              <span class="nav__link--span--icon"
+                ><i class="fas fa-user nav__link--icon"> </i
+              ></span>
+              <span class="nav__link--span--navname"> Khách hàng </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- End Nav Main -->
+
+    <main class="main">
+      <!-- Side Nav Dummy-->
+      <div class="main__sideNav"></div>
+      <!-- End Side Nav -->
+      <!-- Main Content -->
+      <div class="main__content">
+        <!-- ==================-->
+        <!-- Collection List View -->
+        <div class="collections">
+          <div class="collections__titlebar dflex justify-content-between align-items-center">
+            <div class="collections__titlebar--item">
+              <div class="breadcramb mt-3"><i class="fas fa-angle-left mr-1"></i>Products</div>
+              <h1 class="my-1">Loại sản phẩm</h1>
+            </div>
+            <div class="collections__titlebar--item">
+              <button class="btn btn-secondary ml-1 btn-show-add-category">
+                Thêm loại sản phẩm
+              </button>
+            </div>
+          </div>
+
+          <div class="table card my-3">
+            <div class="table--filter mb-2">
+              <span class="table--filter--collapseBtn orders__table--filter--collapseBtn">
+                <i class="fas fa-ellipsis-h"></i>
+              </span>
+              <div class="table--filter--listWrapper orders__table--filter--listWrapper">
+                <ul class="table--filter--list list-unstyled dflex justify-content-start">
+                  <li>
+                    <p class="table--filter--link table--filter--link--active">
+                      Tất cả loại sản phẩm
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="table--search my-3">
+              <div class="table--search--wrapper">
+                <button class="table--search--select py-1 px-2" name="" id="btn-search-category">
+                  Tìm kiếm
+                </button>
+              </div>
+              <div class="relative">
+                <i class="table--search--input--icon fas fa-search absolute"></i>
+                <input
+                  class="table--search--input py-1 pl-4 pr-2"
+                  type="text"
+                  id="text-search-category"
+                  placeholder="Tìm kiếm"
+                />
+              </div>
+            </div>
+
+            <div class="table--heading collections__heading">
+              <p class="table--heading--col1">ID</p>
+              <p class="table--heading--col2">Tển</p>
+              <p class="table--heading--col4">Hoạt động</p>
+            </div>
+
+            <!-- Collection 1 -->
+            <div class="list-all-category"></div>
+
+            <!-- Paginate -->
+            <div class="paginate dflex justify-content-between align-items-center mt-2">
+              <i class="paginate__icon fas fa-angle-left"></i>
+              <i class="paginate__icon fas fa-angle-double-left"></i>
+              <p class="paginate__text">Page 1 of 1</p>
+              <i class="paginate__icon fas fa-angle-double-right"></i>
+              <i class="paginate__icon fas fa-angle-right"></i>
+            </div>
+            <!-- End Paginate -->
+          </div>
+        </div>
+        <!-- End Collection List View -->
+
+        <!-- ==================-->
+        <!-- Collection Edit page -->
+        <div class="collections__edit">
+          <div class="collections__edit__titlebar dflex justify-content-between align-items-center">
+            <div class="collections__edit__titlebar--item">
+              <div class="breadcramb mt-3 back-category">
+                <i class="fas fa-angle-left mr-1"></i>Loại sản phẩm
+              </div>
+              <h1 class="my-1">Appliances</h1>
+            </div>
+            <div class="collections__edit__titlebar--item">
+              <button class="btn btn-danger">Huỷ bỏ</button>
+              <button class="btn btn-secondary ml-1 btn-admin-update-category">Lưu</button>
+            </div>
+          </div>
+
+          <div class="collections__edit__cardWrapper mt-2">
+            <div class="collections__edit__main">
+              <div class="collections__edit__main--addInfo card py-2 px-2 bg-white">
+                <p class="mb-1">Tên loại sản phẩm</p>
+                <input id="txt-update-nameCategory" type="text" placeholder="" class="input" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Collection-Edit page -->
+        <!-- ==================-->
+
+        <!-- ==================-->
+        <!-- Collection Create page -->
+        <div class="collections-create">
+          <div
+            class="collections-create__titlebar dflex justify-content-between align-items-center"
+          >
+            <div class="collections-create__titlebar--item">
+              <div class="breadcramb mt-3 back-category">
+                <i class="fas fa-angle-left mr-1"></i>Loại sản phẩm
+              </div>
+              <h1 class="my-1">Thêm loại sản phẩm</h1>
+            </div>
+            <div class="collections-create__titlebar--item">
+              <button class="btn btn-light">Huỷ bỏ</button>
+              <button class="btn btn-secondary ml-1 btn-create-category">Lưu</button>
+            </div>
+          </div>
+
+          <div class="collections-create__cardWrapper mt-2">
+            <div class="collections-create__main">
+              <div class="collections-create__main--addInfo card py-2 px-2 bg-white">
+                <p class="mb-1">Tên loại sản phẩm</p>
+                <input
+                  id="txt-nameCategory"
+                  type="text"
+                  placeholder="Tên loại sản phẩm"
+                  class="input"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Collection-create page -->
+        <!-- ==================-->
+      </div>
+      <!-- End Main Content -->
+    </main>
+    <script src="js/script.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
